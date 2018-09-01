@@ -20,7 +20,7 @@ using System.Windows;
 using System.Windows.Controls;
 using QuickLook.Common.Plugin;
 
-namespace QuickLook.Plugin.HelloWorld
+namespace QuickLook.Plugin.OfficeViewer
 {
     public class Plugin : IViewer
     {
@@ -28,11 +28,12 @@ namespace QuickLook.Plugin.HelloWorld
 
         public void Init()
         {
+            SyncfusionKey.Register();
         }
 
         public bool CanHandle(string path)
         {
-            return !Directory.Exists(path) && path.ToLower().EndsWith(".zzz");
+            return !Directory.Exists(path) && path.ToLower().EndsWith(".docx");
         }
 
         public void Prepare(string path, ContextObject context)
@@ -42,7 +43,7 @@ namespace QuickLook.Plugin.HelloWorld
 
         public void View(string path, ContextObject context)
         {
-            var viewer = new Label {Content = "I am a Label. I do nothing at all."};
+            var viewer = SyncfusionControl.OpenWord(path);
 
             context.ViewerContent = viewer;
             context.Title = $"{Path.GetFileName(path)}";

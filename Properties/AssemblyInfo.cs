@@ -22,11 +22,11 @@ using System.Windows;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("QuickLook.Plugin.HelloWorld")]
+[assembly: AssemblyTitle("QuickLook.Plugin.OfficeViewer")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("pooi.moe")]
-[assembly: AssemblyProduct("QuickLook.Plugin.HelloWorld")]
+[assembly: AssemblyProduct("QuickLook.Plugin.OfficeViewer")]
 [assembly: AssemblyCopyright("Copyright © Paddy Xu 2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -65,4 +65,4 @@ using System.Windows;
 //
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
-[assembly: AssemblyVersion("1.0.*")]
+//[assembly: AssemblyVersion("1.0.*")]
