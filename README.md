@@ -1,9 +1,8 @@
-
+![QuickLook icon](https://user-images.githubusercontent.com/1687847/29485863-8cd61b7c-84e2-11e7-97d5-eacc2ba10d28.png)
 
 # QuickLook.Plugin.OfficeViewer
 
-
-This plugin allows you to preview Office file formats in QuickLook without the requirement of installing Office suite.
+This plugin allows [QuickLook](https://github.com/QL-Win/QuickLook) to preview Office file formats, without the requirement of installing Office suite.
 
 ## Download and Installation
 
