@@ -331,3 +331,4 @@ ASALocalRun/
 /*.qlplugin
 /GitVersion.cs
 /SyncfusionKey.cs
+/QuickLook.Plugin.Metadata.config

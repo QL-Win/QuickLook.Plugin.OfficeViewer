@@ -11,3 +11,8 @@ using System.Reflection;
 "@
 
 $text | Out-File $PSScriptRoot\..\GitVersion.cs -Encoding utf8
+
+
+$xml = [xml](Get-Content $PSScriptRoot\..\QuickLook.Plugin.Metadata.Base.config)
+$xml.Metadata.Version="$revision"
+$xml.Save("$PSScriptRoot\..\QuickLook.Plugin.Metadata.config")
