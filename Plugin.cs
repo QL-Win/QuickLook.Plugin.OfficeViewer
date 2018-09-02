@@ -16,14 +16,17 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 using System.IO;
+using System.Linq;
 using System.Windows;
-using System.Windows.Controls;
 using QuickLook.Common.Plugin;
 
 namespace QuickLook.Plugin.OfficeViewer
 {
     public class Plugin : IViewer
     {
+        private readonly string[] _formats =
+            {".doc", ".docm", ".docx", ".rtf", ".xls", ".xlsx", ".xlsm", ".pptx", ".pptm", ".potx", ".potm"};
+
         public int Priority => 0;
 
         public void Init()
@@ -33,17 +36,17 @@ namespace QuickLook.Plugin.OfficeViewer
 
         public bool CanHandle(string path)
         {
-            return !Directory.Exists(path) && path.ToLower().EndsWith(".docx");
+            return !Directory.Exists(path) && _formats.Contains(Path.GetExtension(path).ToLower());
         }
 
         public void Prepare(string path, ContextObject context)
         {
-            context.PreferredSize = new Size {Width = 600, Height = 400};
+            context.SetPreferredSizeFit(new Size {Width = 1920, Height = 1440}, 0.9);
         }
 
         public void View(string path, ContextObject context)
         {
-            var viewer = SyncfusionControl.OpenWord(path);
+            var viewer = SyncfusionControl.Open(path);
 
             context.ViewerContent = viewer;
             context.Title = $"{Path.GetFileName(path)}";
