@@ -1,6 +1,8 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Windows.Controls;
 using System.Windows.Media;
+using System.Windows.Threading;
 using QuickLook.Plugin.PDFViewer;
 using Syncfusion;
 using Syncfusion.OfficeChartToImageConverter;
@@ -89,22 +91,27 @@ namespace QuickLook.Plugin.OfficeViewer
 
             var settings = new PresentationToPdfConverterSettings
             {
-                OptimizeIdenticalImages = true, ShowHiddenSlides = true
+                OptimizeIdenticalImages = true,
+                ShowHiddenSlides = true
             };
 
             var pdf = PresentationToPdfConverter.Convert(ppt, settings);
 
             var viewer = new PdfViewerControl();
-            using (var tempPdf = new MemoryStream())
+
+            var tempPdf = new MemoryStream();
+            pdf.Save(tempPdf);
+            pdf.Close(true);
+            pdf.Dispose();
+            ppt.Close();
+            ppt.Dispose();
+
+            viewer.Dispatcher.BeginInvoke(new Action(() =>
             {
-                pdf.Save(tempPdf);
-                pdf.Close(true);
-
-                ppt.Close();
-
                 viewer.LoadPdf(tempPdf);
-            }
-
+                tempPdf.Dispose();
+            }), DispatcherPriority.Loaded);
+            
             return viewer;
         }
     }
