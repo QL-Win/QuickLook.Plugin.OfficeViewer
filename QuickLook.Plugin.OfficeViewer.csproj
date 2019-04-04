@@ -60,60 +60,6 @@
       <HintPath>QuickLook.Plugin.PDFViewer\QuickLook.Plugin.PDFViewer.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Syncfusion.Compression.Base, Version=16.2460.0.50, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
-      <HintPath>packages\Syncfusion.Compression.Base.16.2.0.50\lib\net46\Syncfusion.Compression.Base.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.DocIO.Base, Version=16.2460.0.50, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
-      <HintPath>packages\Syncfusion.DocIO.Base.16.2.0.50\lib\net46\Syncfusion.DocIO.Base.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.ExcelChartToImageConverter.Wpf, Version=16.2460.0.50, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
-      <HintPath>packages\Syncfusion.ExcelChartToImageConverter.WPF.16.2.0.50\lib\net46\Syncfusion.ExcelChartToImageConverter.Wpf.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.Licensing, Version=16.2460.0.50, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
-      <HintPath>packages\Syncfusion.Licensing.16.2.0.50\lib\net46\Syncfusion.Licensing.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.OfficeChart.Base, Version=16.2460.0.50, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
-      <HintPath>packages\Syncfusion.OfficeChart.Base.16.2.0.50\lib\net46\Syncfusion.OfficeChart.Base.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.OfficeChartToImageConverter.Wpf, Version=16.2460.0.50, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
-      <HintPath>packages\Syncfusion.OfficeChartToImageConverter.Wpf.16.2.0.50\lib\net46\Syncfusion.OfficeChartToImageConverter.Wpf.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.Pdf.Base, Version=16.2460.0.50, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
-      <HintPath>packages\Syncfusion.Pdf.Base.16.2.0.50\lib\net46\Syncfusion.Pdf.Base.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.Presentation.Base, Version=16.2460.0.50, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
-      <HintPath>packages\Syncfusion.Presentation.Base.16.2.0.50\lib\net46\Syncfusion.Presentation.Base.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.PresentationToPdfConverter.Base, Version=16.2460.0.50, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
-      <HintPath>packages\Syncfusion.PresentationToPdfConverter.Base.16.2.0.50\lib\net46\Syncfusion.PresentationToPdfConverter.Base.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.SfCellGrid.WPF, Version=16.2460.0.50, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
-      <HintPath>packages\Syncfusion.SfCellGrid.WPF.16.2.0.50\lib\net46\Syncfusion.SfCellGrid.WPF.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.SfChart.WPF, Version=16.2460.0.50, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
-      <HintPath>packages\Syncfusion.SfChart.WPF.16.2.0.50\lib\net46\Syncfusion.SfChart.WPF.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.SfGridCommon.WPF, Version=16.2460.0.50, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
-      <HintPath>packages\Syncfusion.SfGridCommon.WPF.16.2.0.50\lib\net46\Syncfusion.SfGridCommon.WPF.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.SfRichTextBoxAdv.WPF, Version=16.2460.0.50, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
-      <HintPath>packages\Syncfusion.SfRichTextBoxAdv.WPF.16.2.0.50\lib\net46\Syncfusion.SfRichTextBoxAdv.WPF.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.SfSpreadsheet.WPF, Version=16.2460.0.50, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
-      <HintPath>packages\Syncfusion.SfSpreadsheet.WPF.16.2.0.50\lib\net46\Syncfusion.SfSpreadsheet.WPF.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.SfSpreadsheetHelper.WPF, Version=16.2460.0.50, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
-      <HintPath>packages\Syncfusion.SfSpreadsheetHelper.WPF.16.2.0.50\lib\net46\Syncfusion.SfSpreadsheetHelper.WPF.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.Shared.Wpf, Version=16.2460.0.50, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
-      <HintPath>packages\Syncfusion.Shared.WPF.16.2.0.50\lib\net46\Syncfusion.Shared.Wpf.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.Tools.Wpf, Version=16.2460.0.50, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
-      <HintPath>packages\Syncfusion.Tools.WPF.16.2.0.50\lib\net46\Syncfusion.Tools.Wpf.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.XlsIO.Base, Version=16.2460.0.50, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
-      <HintPath>packages\Syncfusion.XlsIO.Base.16.2.0.50\lib\net46\Syncfusion.XlsIO.Base.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xaml">
@@ -128,6 +74,7 @@
     <Compile Include="Plugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SyncfusionControl.cs" />
+    <None Include="app.config" />
     <None Include="QuickLook.Plugin.Metadata.Base.config" />
     <None Include="SyncfusionKey.Example.cs" />
     <Compile Include="SyncfusionKey.cs" />
@@ -140,10 +87,32 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
     <None Include="QuickLook.Plugin.Metadata.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Syncfusion.OfficeChartToImageConverter.Wpf">
+      <Version>17.1.0.38</Version>
+    </PackageReference>
+    <PackageReference Include="Syncfusion.Presentation.Wpf">
+      <Version>17.1.0.38</Version>
+    </PackageReference>
+    <PackageReference Include="Syncfusion.PresentationToPdfConverter.Wpf">
+      <Version>17.1.0.38</Version>
+    </PackageReference>
+    <PackageReference Include="Syncfusion.SfRichTextBoxAdv.WPF">
+      <Version>17.1.0.38</Version>
+    </PackageReference>
+    <PackageReference Include="Syncfusion.SfSpreadsheetHelper.WPF">
+      <Version>17.1.0.38</Version>
+    </PackageReference>
+    <PackageReference Include="Syncfusion.Tools.WPF">
+      <Version>17.1.0.38</Version>
+    </PackageReference>
+    <PackageReference Include="Syncfusion.XlsIO.Wpf">
+      <Version>17.1.0.38</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
