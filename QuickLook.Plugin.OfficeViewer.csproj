@@ -93,25 +93,25 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Syncfusion.OfficeChartToImageConverter.Wpf">
-      <Version>17.1.0.38</Version>
+      <Version>18.2.0.59</Version>
     </PackageReference>
     <PackageReference Include="Syncfusion.Presentation.Wpf">
-      <Version>17.1.0.38</Version>
+      <Version>18.2.0.59</Version>
     </PackageReference>
     <PackageReference Include="Syncfusion.PresentationToPdfConverter.Wpf">
-      <Version>17.1.0.38</Version>
+      <Version>18.2.0.59</Version>
     </PackageReference>
     <PackageReference Include="Syncfusion.SfRichTextBoxAdv.WPF">
-      <Version>17.1.0.38</Version>
+      <Version>18.2.0.59</Version>
     </PackageReference>
     <PackageReference Include="Syncfusion.SfSpreadsheetHelper.WPF">
-      <Version>17.1.0.38</Version>
+      <Version>18.2.0.59</Version>
     </PackageReference>
     <PackageReference Include="Syncfusion.Tools.WPF">
-      <Version>17.1.0.38</Version>
+      <Version>18.2.0.59</Version>
     </PackageReference>
     <PackageReference Include="Syncfusion.XlsIO.Wpf">
-      <Version>17.1.0.38</Version>
+      <Version>18.2.0.59</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
