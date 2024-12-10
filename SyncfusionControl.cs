@@ -10,7 +10,9 @@ using Syncfusion.UI.Xaml.SpreadsheetHelper;
 using Syncfusion.Windows.Controls.RichTextBoxAdv;
 using System;
 using System.IO;
+using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Threading;
 
@@ -20,9 +22,42 @@ internal static class SyncfusionControl
 {
     public static Control Open(string path)
     {
-        if (new FileInfo(path).IsReadOnly)
+        // The Syncfusion method we are currently using does not support reading read-only file
+        if ((File.GetAttributes(path) & FileAttributes.ReadOnly) == FileAttributes.ReadOnly)
         {
-            return new Label { Content = "Readonly file is not supported." };
+            return new ContentControl()
+            {
+                Content = new StackPanel()
+                {
+                    Children =
+                    {
+                        new Label { Content = "Read-only file is not supported." },
+                        new Button
+                        {
+                            Content = "Remove read-only file attribute",
+                            Margin = new Thickness(0, 10, 0, 0),
+                            Command = new RelayCommand(() =>
+                            {
+                                try
+                                {
+                                    FileAttributes attributes = File.GetAttributes(path);
+
+                                    if ((attributes & FileAttributes.ReadOnly) == FileAttributes.ReadOnly)
+                                    {
+                                        // Try to remove read-only file attribute
+                                        File.SetAttributes(path, attributes & ~FileAttributes.ReadOnly);
+                                        MessageBox.Show("Removed readonly file attribute successfully, please try to open again.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                                    }
+                                }
+                                catch (Exception ex)
+                                {
+                                    MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                                }
+                            }),
+                        }
+                    }
+                }
+            };
         }
 
         return (Path.GetExtension(path)?.ToLower()) switch
@@ -106,5 +141,21 @@ internal static class SyncfusionControl
         }), DispatcherPriority.Loaded);
 
         return viewer;
+    }
+}
+
+file sealed class RelayCommand(Action execute, Func<bool> canExecute = null) : ICommand
+{
+    private readonly Action _execute = execute ?? throw new ArgumentNullException(nameof(execute));
+    private readonly Func<bool> _canExecute = canExecute;
+
+    public bool CanExecute(object parameter) => _canExecute == null || _canExecute();
+
+    public void Execute(object parameter) => _execute();
+
+    public event EventHandler CanExecuteChanged
+    {
+        add => CommandManager.RequerySuggested += value;
+        remove => CommandManager.RequerySuggested -= value;
     }
 }
