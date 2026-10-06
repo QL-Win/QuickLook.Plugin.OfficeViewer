@@ -11,6 +11,28 @@ This plugin allows [QuickLook](https://github.com/QL-Win/QuickLook) to preview O
 3. Click the “Install” button in the popup window.
 4. Restart QuickLook.
 
+## Optional legacy PowerPoint previews
+
+Legacy `.ppt` files can also be previewed when LibreOffice is installed in the
+standard Windows Program Files location. LibreOffice is an optional external
+dependency; this plugin does not install or download it. Other Office formats
+continue to use the existing renderer.
+
+For `.ppt` files, LibreOffice runs in the background with a separate temporary
+profile and converts a private copy to PDF. QuickLook displays that PDF with its
+built-in PDF viewer. The source presentation is not modified. Slides are static;
+animations, transitions and embedded media are not played, and rendering may
+differ from Microsoft PowerPoint.
+
+The first preview requires a conversion; later previews reuse a cache indexed
+by the source file's SHA-256 hash. Converted PDFs are stored in
+`%LOCALAPPDATA%\QuickLook\OfficeViewer\LegacyPowerPoint\v1`.
+The cache contains copies of slide contents and is not automatically pruned;
+it can be deleted after closing QuickLook. Temporary conversion jobs are removed
+after completion. Closing or switching the preview stops it from updating the
+window, while an already-started conversion finishes to populate the cache.
+Conversions time out after three minutes.
+
 ## Development
 
 This plugin uses [Syncfusion](https://www.syncfusion.com/products/wpf) components to render Office file formats. These components are **NOT FREEWARE**. If you want to develop on this project and distribute it among users, **YOU MUST OBTAIN A LICENSE FROM SYNCFUSION.** Specifically, Syncfusion provides [Open Source Project License](https://www.syncfusion.com/sales/speciallicensingprograms)  for open-source project, which is free.
