@@ -68,6 +68,7 @@
         <Compile Remove="QuickLook.Plugin.PDFViewer\**" />
         <EmbeddedResource Remove="QuickLook.Plugin.PDFViewer\**" />
         <Compile Remove="SyncfusionKey.Example.cs" />
+        <Compile Remove="Tests\**" />
     </ItemGroup>
 
     <ItemGroup>

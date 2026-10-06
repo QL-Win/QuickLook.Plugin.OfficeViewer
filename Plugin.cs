@@ -24,6 +24,7 @@ namespace QuickLook.Plugin.OfficeViewer;
 
 public class Plugin : IViewer
 {
+    private LegacyPowerPointViewer _legacyPowerPoint;
     private readonly string[] _formats =
         [".doc", ".docm", ".docx", ".rtf", ".xls", ".xlsx", ".xlsm", ".pptx", ".pptm", ".potx", ".potm"];
 
@@ -36,16 +37,35 @@ public class Plugin : IViewer
 
     public bool CanHandle(string path)
     {
+        if (!Directory.Exists(path) && IsLegacyPowerPoint(path))
+            return LegacyPowerPointConverter.IsAvailable;
+
         return !Directory.Exists(path) && _formats.Contains(Path.GetExtension(path).ToLower());
     }
 
+    private static bool IsLegacyPowerPoint(string path) =>
+        string.Equals(Path.GetExtension(path), ".ppt", System.StringComparison.OrdinalIgnoreCase);
+
     public void Prepare(string path, ContextObject context)
     {
+        if (IsLegacyPowerPoint(path))
+        {
+            _legacyPowerPoint = new LegacyPowerPointViewer();
+            _legacyPowerPoint.Prepare(path, context);
+            return;
+        }
+
         context.SetPreferredSizeFit(new Size { Width = 1920, Height = 1440 }, 0.9d);
     }
 
     public void View(string path, ContextObject context)
     {
+        if (IsLegacyPowerPoint(path))
+        {
+            _legacyPowerPoint.View(path, context);
+            return;
+        }
+
         var viewer = SyncfusionControl.Open(path);
 
         context.ViewerContent = viewer;
@@ -56,5 +76,7 @@ public class Plugin : IViewer
 
     public void Cleanup()
     {
+        _legacyPowerPoint?.Cleanup();
+        _legacyPowerPoint = null;
     }
 }
